@@ -2,18 +2,15 @@ package com.project.model;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.util.List;
+import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "user")
@@ -22,21 +19,14 @@ public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
-    @Column
     private String username;
-    @Column
     private String name;
-    @Column
     private String surname;
-    @Column
     private String password;
     @Transient
     private String passwordConfirm;
-    @Column
-    private BigDecimal money;
-    @OneToMany
-    @JoinTable(name = "wallet", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "id"))
-    private List<Wallet> userWallet;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date dateOfBirth;
 
     public User() {
 
@@ -47,7 +37,6 @@ public class User implements Serializable {
         this.name = name;
         this.surname = surname;
         this.password = password;
-        this.money = money;
     }
 
     public Integer getId() {
@@ -98,19 +87,11 @@ public class User implements Serializable {
         this.passwordConfirm = passwordConfirm;
     }
 
-    public BigDecimal getMoney() {
-        return money;
+    public Date getDateOfBirth() {
+        return dateOfBirth;
     }
 
-    public void setMoney(BigDecimal money) {
-        this.money = money;
-    }
-
-    public List<Wallet> getUserWallet() {
-        return userWallet;
-    }
-
-    public void setUserWallet(List<Wallet> userWallet) {
-        this.userWallet = userWallet;
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
     }
 }

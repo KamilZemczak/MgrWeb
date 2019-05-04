@@ -6,8 +6,6 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-import java.math.BigDecimal;
-
 import com.project.model.User;
 import com.project.searcher.UserSearcher;
 
@@ -57,10 +55,6 @@ public class UserValidator implements Validator {
 
         if (user.getPasswordConfirm() != null && !user.getPasswordConfirm().equals(user.getPassword())) {
             errors.rejectValue("passwordConfirm", "Diff.userForm.passwordConfirm");
-        }
-
-        if (user.getMoney() != null && user.getMoney().compareTo(BigDecimal.ZERO) < 0) {
-            errors.rejectValue("money", "Negative.userForm.money");
         }
     }
 }

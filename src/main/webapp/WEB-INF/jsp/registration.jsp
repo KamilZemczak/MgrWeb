@@ -82,11 +82,12 @@
                                     </div>
                             </spring:bind>
 
+                             <spring:bind path="dateOfBirth">
                             <div class="form-group ${status.error ? 'has-error' : ''}">
                                 <label for="example-date-input" class="col-2 col-form-label"><asd><strong>DATA URODZENIA</strong></asd></label>
-                                <input type="date" path ="dateofbirth" value="2011-08-19" id="example-date-input" class="form-control" autofocus="true">
-
+                                <form:input type="date" path="dateOfBirth" value="2011-08-19" id="example-date-input" class="form-control" autofocus="true"></form:input>
                             </div>
+                                 </spring:bind>
 
                             <button class="btn btn-lg btn-primary btn-block" type="submit">Zarejstruj się</button>
                         </form:form>
@@ -98,7 +99,7 @@
 
         <div class="navbar-fixed-bottom">
             <div class="panel-footer">
-                Copyright: Project FP 2018 (Kamil Zemczak).
+                Copyright: Praca magisterska 2019 (Kamil Zemczak).
             </div>
         </div>
 
