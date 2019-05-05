@@ -20,31 +20,29 @@
         <link href="${contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
         <link href="${contextPath}/static/css/common.css" rel="stylesheet">
 
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
         <style>
             .jumbotron{
-                background-image: url("static/images/test2.png");
+                background-image: url("static/images/registration.png");
                 color:white;
                 padding: 5px;
-            }
-            .asd{
-                color: white;
-                text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
             }
         </style>
     </head>
     <body>
         <div class="container mainPanel">
-            <center> <img src="static/images/logo.png" width="400" height="215"> </center><br>
-            <br>
+            <center><img src="static/images/logo.png" width="400" height="215"></center><br>
             <div class="row">
-                <div class="col-md-4">
-                </div>
+                <div class="col-md-4"></div>
                 <div class="col-md-4">
                     <div class="jumbotron text-center">
                         <form:form method="POST" modelAttribute="userForm" class="form-signin">
 
                             <spring:bind path="username">
                                 <div class="form-group ${status.error ? 'has-error' : ''}">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                                    </div>
                                     <form:input type="text" path="username" class="form-control" placeholder="Nazwa użytkownika"
                                                 autofocus="true"></form:input>
                                     <form:errors path="username"></form:errors>
@@ -82,12 +80,20 @@
                                     </div>
                             </spring:bind>
 
-                             <spring:bind path="dateOfBirth">
-                            <div class="form-group ${status.error ? 'has-error' : ''}">
-                                <label for="example-date-input" class="col-2 col-form-label"><asd><strong>DATA URODZENIA</strong></asd></label>
-                                <form:input type="date" path="dateOfBirth" value="2011-08-19" id="example-date-input" class="form-control" autofocus="true"></form:input>
+                            <spring:bind path="dateOfBirth">
+                                <div class="form-group ${status.error ? 'has-error' : ''}">
+                                    <label for="example-date-input" class="col-2 col-form-label"><strong>DATA URODZENIA</strong></label>
+                                    <form:input type="date" path="dateOfBirth" id="example-date-input" class="form-control" autofocus="true"></form:input>
+                                    </div>
+                            </spring:bind>
+
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" id="materialInline1" value="male" name="gender" checked="">
+                                <label class="form-check-label" for="male">MĘŻCZYZNA</label>
+
+                                <input type="radio" class="form-check-input" id="materialInline2" value="female" name="gender">
+                                <label class="form-check-label" for="female">KOBIETA</label>
                             </div>
-                                 </spring:bind>
 
                             <button class="btn btn-lg btn-primary btn-block" type="submit">Zarejstruj się</button>
                         </form:form>

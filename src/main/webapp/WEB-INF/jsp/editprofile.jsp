@@ -23,26 +23,23 @@
 
         <style>
             .jumbotron{
-                background-color:#9dd29c;
+                background-image: url("static/images/registration.png");
                 color:white;
                 padding: 5px;
-                padding-top: 5px;
-                padding-bottom: 20px;
             }
         </style>
     </head>
     <body>
 
         <div class="navbar navbar-inverse">
-            <a href="/" class="navbar-brand">Stocks</a>
+            <a href="/" class="navbar-brand">Ready4RUN</a>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
 
                     <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">User panel <span class="caret"></span></a>
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Panel użytkownika<span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="user-money">Edit wallet</a></li>
-                            <li><a href="user-account">Edit account</a></li>
+                            <li><a href="user-account">Edytuj profil</a></li>
                         </ul></li>
                 </ul>
 
@@ -65,25 +62,24 @@
                 <div class="col-md-4">
                 </div>
                 <div class="col-md-4">
-                    <div class="jumbotron text-center">
+                    <div class="jumbotron">
 
-                        <h2><strong>EDIT ACCOUNT</strong>:</h2>
-                        <h5>If you change your login or password, you will need to log in again.</h5>
-                        <h5>(with new login or password)</h5>
+                        <h2><strong>EDYCJA PROFILU</strong>:</h2>
                         <form:form method="POST" modelAttribute="userEdit" class="form-signin">
 
                             <spring:bind path="username">
                                 <div class="form-group ${status.error ? 'has-error' : ''}">
-                                    <form:input type="text" path="username" class="form-control" placeholder="Username"
-                                                autofocus="true" value="${user.username}"></form:input>
-                                    <form:errors path="username"></form:errors>
+                                    <left><label>Nazwa użytkownika</label></left>
+                                        <form:input type="text" path="username" class="form-control" placeholder="Username"
+                                                    autofocus="true" value="${user.username}"></form:input>
+                                        <form:errors path="username"></form:errors>
                                     </div>
                             </spring:bind>
 
                             <spring:bind path="name">
                                 <div class="form-group ${status.error ? 'has-error' : ''}">
                                     <form:input type="text" path="name" class="form-control" placeholder="Name"
-                                                autofocus="true" value="${user.name}" readonly="true"></form:input>
+                                                autofocus="true" value="${user.name}"></form:input>
                                     <form:errors path="name"></form:errors>
                                     </div>
                             </spring:bind>
@@ -96,30 +92,45 @@
                                     </div>
                             </spring:bind>
 
-                            <spring:bind path="money">
+                            <spring:bind path="dateOfBirth">
                                 <div class="form-group ${status.error ? 'has-error' : ''}">
-                                    <form:input type="text" path="money" class="form-control" placeholder="Budget (PLN)"
-                                                autofocus="true" value="${user.money}"></form:input>
-                                    <form:errors path="money"></form:errors>
+                                    <label for="example-date-input" class="col-2 col-form-label"><strong>DATA URODZENIA</strong></label>
+                                    <form:input type="date" path="dateOfBirth" id="example-date-input" class="form-control" autofocus="true" value="${user.editDate}"></form:input>
                                     </div>
                             </spring:bind>
 
-                            <spring:bind path="password">
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" id="materialInline1" value="male" name="gender" checked="">
+                                <label class="form-check-label" for="male">MĘŻCZYZNA</label>
+
+                                <input type="radio" class="form-check-input" id="materialInline2" value="female" name="gender">
+                                <label class="form-check-label" for="female">KOBIETA</label>
+                            </div>
+
+                            <spring:bind path="weight">
                                 <div class="form-group ${status.error ? 'has-error' : ''}">
-                                    <form:input type="password" path="password" class="form-control" placeholder="New password"></form:input>
-                                    <form:errors path="password"></form:errors>
+                                    <form:input type="number" path="weight" class="form-control" placeholder="Waga"
+                                                autofocus="true" value="${user.weight}"></form:input>
+                                    <form:errors path="weight"></form:errors>
                                     </div>
                             </spring:bind>
 
-                            <spring:bind path="passwordConfirm">
+                            <spring:bind path="height">
                                 <div class="form-group ${status.error ? 'has-error' : ''}">
-                                    <form:input type="password" path="passwordConfirm" class="form-control"
-                                                placeholder="Repeat password"></form:input>
-                                    <form:errors path="passwordConfirm"></form:errors> 
+                                    <form:input type="number" path="height" class="form-control" placeholder="Wzrost"
+                                                autofocus="true" value="${user.height}"></form:input>
+                                    <form:errors path="height"></form:errors>
                                     </div>
                             </spring:bind>
+                            <label>Ulubiona dyscyplina</label>
+                            <select class="form-control">
+                                <option selected=""> Bieganie</option>
+                                <option>Pływanie</option>
+                                <option>Trening siłowy</option>
+                                <option>Spacer</option>
+                            </select>
 
-                            <button class="btn btn-lg btn-primary btn-block" type="submit">Save changes</button>
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">Zapisz zmiany</button>
                         </form:form>
                     </div>
                 </div>
@@ -128,7 +139,7 @@
 
         <div class="navbar-fixed-bottom">
             <div class="panel-footer">
-                Copyright: Project FP 2018 (Kamil Zemczak).
+                Copyright: Praca magisterska 2019 (Kamil Zemczak).
             </div>
         </div>
 

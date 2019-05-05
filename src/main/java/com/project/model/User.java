@@ -1,7 +1,6 @@
 package com.project.model;
 
 import java.io.Serializable;
-import java.math.BigDecimal;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -27,16 +26,29 @@ public class User implements Serializable {
     private String passwordConfirm;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateOfBirth;
+    private String gender;
+    private Integer weight;
+    private Integer height;
+    private String favourite;
+    private String editDate;
 
     public User() {
 
     }
 
-    public User(String username, String name, String surname, String password, BigDecimal money) {
+    public User(Integer id, String username, String name, String surname, String password, String passwordConfirm, Date dateOfBirth, String gender, Integer weight, Integer height, String favourite, String editDate) {
+        this.id = id;
         this.username = username;
         this.name = name;
         this.surname = surname;
         this.password = password;
+        this.passwordConfirm = passwordConfirm;
+        this.dateOfBirth = dateOfBirth;
+        this.gender = gender;
+        this.weight = weight;
+        this.height = height;
+        this.favourite = favourite;
+        this.editDate = editDate;
     }
 
     public Integer getId() {
@@ -93,5 +105,45 @@ public class User implements Serializable {
 
     public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public Integer getWeight() {
+        return weight;
+    }
+
+    public void setWeight(Integer weight) {
+        this.weight = weight;
+    }
+
+    public Integer getHeight() {
+        return height;
+    }
+
+    public void setHeight(Integer height) {
+        this.height = height;
+    }
+
+    public String getFavourite() {
+        return favourite;
+    }
+
+    public void setFavourite(String favourite) {
+        this.favourite = favourite;
+    }
+
+    public String getEditDate() {
+        return editDate;
+    }
+
+    public void setEditDate(String editDate) {
+        this.editDate = editDate;
     }
 }

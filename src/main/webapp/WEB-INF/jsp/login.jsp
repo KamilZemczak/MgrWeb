@@ -10,10 +10,11 @@
         <link href="${contextPath}/static/css/bootstrap.css" rel="stylesheet">
         <link href="${contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
         <link href="${contextPath}/static/css/common.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
         <style type="text/css">
             .foo {
-                background-image: url("static/images/test.png");
+                background-image: url("static/images/login.png");
                 color:white;
                 padding: 5px;
                 text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
@@ -35,7 +36,10 @@
                         <form method="POST" action="${contextPath}/login" class="form-signin">
                             <div class="form-group ${error != null ? 'has-error' : ''}">
                                 <span>${message}</span>
-                                <input name="username" type="text" class="form-control" placeholder="Username" autofocus="true"/>
+                                <div class="input-group">
+                                    <span class="input-group-addon"><i class="fa fa-user fa-lg" aria-hidden="true"></i></span>
+                                    <input name="username" type="text" class="form-control" placeholder="Nazwa użytkownika" autofocus="true"/>
+                                </div>
                                 <input name="password" type="password" class="form-control" placeholder="Password"/>
                                 <span><strong>${error}</strong></span>
                                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
@@ -46,7 +50,6 @@
             </div>
             <center><h4>Jeśli nie masz konta: <a href="${contextPath}/registration">ZAREJESTRUJ SIĘ.</a></h4></center>
         </div>
-
 
         <div class="navbar-fixed-bottom">
             <div class="panel-footer">
