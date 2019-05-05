@@ -16,7 +16,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Stock Exchange</title>
+        <title>Ready4RUN</title>
 
         <link href="${contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
         <link href="${contextPath}/static/css/common.css" rel="stylesheet">
@@ -50,7 +50,7 @@
                         </form>
                     </c:if>
 
-                    <li class="navbar-text">Logged in as ${user.name} ${user.surname}</li>
+                    <li class="navbar-text">Zalogowany jako ${user.name} ${user.surname}</li>
                     <li><a href="user-account"><span class="glyphicon glyphicon-cog" style="font-size:20px;"></span></a></li>
                     <li><a onclick="document.forms['logoutForm'].submit()" href="#"><span class="glyphicon glyphicon-off" style="font-size:20px;"></span></a></li>
                 </ul>
@@ -99,8 +99,8 @@
                                     </div>
                             </spring:bind>
 
-                            <div class="form-check form-check-inline">
-                                <input type="radio" class="form-check-input" id="materialInline1" value="male" name="gender" checked="">
+                            <div class="form-check form-check-inline" checked=${user.gender}>
+                                <input type="radio" class="form-check-input" id="materialInline1" value="male" name="gender">
                                 <label class="form-check-label" for="male">MĘŻCZYZNA</label>
 
                                 <input type="radio" class="form-check-input" id="materialInline2" value="female" name="gender">
@@ -122,12 +122,16 @@
                                     <form:errors path="height"></form:errors>
                                     </div>
                             </spring:bind>
+                            
                             <label>Ulubiona dyscyplina</label>
-                            <select class="form-control">
-                                <option selected=""> Bieganie</option>
-                                <option>Pływanie</option>
-                                <option>Trening siłowy</option>
-                                <option>Spacer</option>
+                            <select class="form-control" name="favourite">
+                                <option selected="" disabled="true">${user.favourite}</option>
+                                 <option value="None" disabled="true">---------------------------------------------------</option>
+                                <option value="Pływanie">Bieganie</option>
+                                <option value="Pływanie">Pływanie</option>
+                                <option value="Jazda na rowerze">Jazda na rowerze</option>
+                                <option value="Trening siłowy">Trening siłowy</option>
+                                <option value="Chodzenie">Chodzenie</option>
                             </select>
 
                             <button class="btn btn-lg btn-primary btn-block" type="submit">Zapisz zmiany</button>
@@ -136,7 +140,7 @@
                 </div>
             </div>
         </div>
-
+                    
         <div class="navbar-fixed-bottom">
             <div class="panel-footer">
                 Copyright: Praca magisterska 2019 (Kamil Zemczak).

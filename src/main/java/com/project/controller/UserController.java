@@ -13,8 +13,7 @@ import com.project.service.SecurityService;
 import com.project.service.UserService;
 import com.project.validator.UserEditValidator;
 import com.project.validator.UserValidator;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
@@ -63,13 +62,8 @@ public class UserController {
     @RequestMapping(value = "/user-account", method = RequestMethod.GET)
     public String updateProfile(Model model, HttpServletRequest request) throws Exception {
         model.addAttribute("userEdit", new User());
-        User dupa = userService.getCurrentUser();
-        Date date = dupa.getDateOfBirth();
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-        String s = formatter.format(date);
-        dupa.setEditDate(s);
-        request.setAttribute("user", dupa);
-
+        User user = userService.modifyDate();
+        request.setAttribute("user", user);
         return "editprofile";
     }
 

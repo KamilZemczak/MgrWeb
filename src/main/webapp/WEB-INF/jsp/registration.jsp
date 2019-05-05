@@ -40,9 +40,6 @@
 
                             <spring:bind path="username">
                                 <div class="form-group ${status.error ? 'has-error' : ''}">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-                                    </div>
                                     <form:input type="text" path="username" class="form-control" placeholder="Nazwa użytkownika"
                                                 autofocus="true"></form:input>
                                     <form:errors path="username"></form:errors>

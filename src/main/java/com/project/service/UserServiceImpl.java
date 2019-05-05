@@ -1,14 +1,16 @@
 package com.project.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.project.model.User;
 import com.project.dao.UserRepository;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -38,12 +40,22 @@ public class UserServiceImpl implements UserService {
     public void update(User user) {
         userRepository.save(user);
     }
-
+   
     @Override
-    public void updatePassword(User user) {
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+    public void updateProfile(User user, User userForm) {
+        updateAllValues(user, userForm);
     }
-
+    
+    @Override
+    public User modifyDate() {
+        User user = getCurrentUser();
+        Date date = user.getDateOfBirth();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        String dateString = formatter.format(date);
+        user.setEditDate(dateString);
+        return user;
+    }
+    
     private String getUserName() {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();
         if (auth != null) {
@@ -51,27 +63,16 @@ public class UserServiceImpl implements UserService {
         }
         return "";
     }
-
-    @Override
-    public void updateSurnameAndMoney(User user, User userForm) {
-        user.setSurname(userForm.getSurname());
-        update(user);
-    }
-
-    @Override
-    public void updateAllValues(User user, User userForm) {
+     
+    private void updateAllValues(User user, User userForm) {
         user.setUsername(userForm.getUsername());
         user.setName(userForm.getName());
         user.setSurname(userForm.getSurname());
         user.setDateOfBirth(userForm.getDateOfBirth());
+        user.setGender(userForm.getGender());
         user.setHeight(userForm.getHeight());
         user.setWeight(userForm.getWeight());
+        user.setFavourite(userForm.getFavourite());
         update(user);
-    }
-
-    @Override
-    public void updateProfile(User user, User userForm) {
-        updateAllValues(user, userForm);
-
     }
 }

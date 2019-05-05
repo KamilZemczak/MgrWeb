@@ -36,10 +36,7 @@
                         <form method="POST" action="${contextPath}/login" class="form-signin">
                             <div class="form-group ${error != null ? 'has-error' : ''}">
                                 <span>${message}</span>
-                                <div class="input-group">
-                                    <span class="input-group-addon"><i class="fa fa-user fa-lg" aria-hidden="true"></i></span>
-                                    <input name="username" type="text" class="form-control" placeholder="Nazwa użytkownika" autofocus="true"/>
-                                </div>
+                                <input name="username" type="text" class="form-control" placeholder="Nazwa użytkownika" autofocus="true"/>
                                 <input name="password" type="password" class="form-control" placeholder="Password"/>
                                 <span><strong>${error}</strong></span>
                                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
