@@ -37,7 +37,7 @@
                             <div class="form-group ${error != null ? 'has-error' : ''}">
                                 <span>${message}</span>
                                 <input name="username" type="text" class="form-control" placeholder="Nazwa użytkownika" autofocus="true"/>
-                                <input name="password" type="password" class="form-control" placeholder="Password"/>
+                                <input name="password" type="password" class="form-control" placeholder="Hasło"/>
                                 <span><strong>${error}</strong></span>
                                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                                 <button class="btn btn-lg btn-primary btn-block" type="submit">Zaloguj się</button> 

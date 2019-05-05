@@ -99,8 +99,8 @@
                                     </div>
                             </spring:bind>
 
-                            <div class="form-check form-check-inline" checked=${user.gender}>
-                                <input type="radio" class="form-check-input" id="materialInline1" value="male" name="gender">
+                            <div class="form-check form-check-inline">
+                                <input type="radio" class="form-check-input" id="materialInline1" value="male" name="gender" checked="">
                                 <label class="form-check-label" for="male">MĘŻCZYZNA</label>
 
                                 <input type="radio" class="form-check-input" id="materialInline2" value="female" name="gender">
