@@ -17,7 +17,6 @@
                 background-image: url("static/images/login.png");
                 color:white;
                 padding: 5px;
-                text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
                 border-radius: 10px;
             }
         </style>
@@ -36,6 +35,7 @@
                         <form method="POST" action="${contextPath}/login" class="form-signin">
                             <div class="form-group ${error != null ? 'has-error' : ''}">
                                 <span>${message}</span>
+                                <span><strong>${error}</strong></span>
                                 <div class="input-group loginInput">
 						          <span class="input-group-addon"><i class="fa fa-user"></i></span>
 						          <input name="username" type="text" class="form-control" maxlength="50" placeholder="Nazwa użytkownika" formControlName="username" autofocus="true">
@@ -44,7 +44,6 @@
 						          <span class="input-group-addon"><i class="fa fa-lock"></i></span>
 						          <input name="password" type="password" class="form-control" maxlength="50" formControlName="password" placeholder="Hasło">
 					            </div>
-                                <span><strong>${error}</strong></span>
                                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                                 <button class="btn btn-lg btn-primary btn-block" type="submit">Zaloguj się</button> 
                             </div>
