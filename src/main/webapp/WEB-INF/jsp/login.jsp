@@ -52,7 +52,7 @@
                     </div>
                 </div>
             </div>
-            <center><h4>Jeśli nie masz konta: <a href="${contextPath}/registration">ZAREJESTRUJ SIĘ.</a></h4></center>
+            <center><h4>Jeśli nie masz konta: <a href="${contextPath}/registration">ZAREJESTRUJ SIĘ</a></h4></center>
         </div>
 
         <div class="navbar-fixed-bottom">

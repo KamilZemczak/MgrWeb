@@ -20,7 +20,7 @@
 
         <link href="${contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
         <link href="${contextPath}/static/css/common.css" rel="stylesheet">
-        
+
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 
         <style>
@@ -72,11 +72,11 @@
                                 <div class="form-group ${status.error ? 'has-error' : ''}">
                                     <label>Nazwa użytkownika</label>
                                     <div class="input-group">
-						                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                        <form:input path="username" type="text" class="form-control" maxlength="50" placeholder="Nazwa użytkownika" autofocus="true" value="${user.username}"></form:input>
-					                </div> 
+                                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                            <form:input path="username" type="text" class="form-control" maxlength="50" placeholder="Nazwa użytkownika" autofocus="true" value="${user.username}"></form:input>
+                                        </div> 
                                     <form:errors path="username"></form:errors>
-                                </div>
+                                    </div>
                             </spring:bind>
 
                             <div class="row">
@@ -85,9 +85,9 @@
                                         <div class="form-group ${status.error ? 'has-error' : ''}">
                                             <label>Imię</label>
                                             <div class="input-group">
-						                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                                <form:input path="name" type="text" class="form-control" maxlength="50" placeholder="Imię" value="${user.name}"></form:input>
-					                        </div>  
+                                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                                    <form:input path="name" type="text" class="form-control" maxlength="50" placeholder="Imię" value="${user.name}"></form:input>
+                                                </div>  
                                             <form:errors path="name"></form:errors>
                                             </div>
                                     </spring:bind>
@@ -97,11 +97,11 @@
                                         <div class="form-group ${status.error ? 'has-error' : ''}">
                                             <label>Nazwisko</label>
                                             <div class="input-group">
-						                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                                                <form:input path="surname" type="text" class="form-control" maxlength="50" placeholder="Nazwisko" value="${user.surname}"></form:input>
+                                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                                    <form:input path="surname" type="text" class="form-control" maxlength="50" placeholder="Nazwisko" value="${user.surname}"></form:input>
+                                                </div>
+                                            <form:errors path="surname"></form:errors>
                                             </div>
-                                        <form:errors path="surname"></form:errors>
-                                        </div>
                                     </spring:bind>
                                 </div>    
                             </div>
@@ -112,7 +112,7 @@
                                     <form:input type="date" path="dateOfBirth" id="example-date-input" class="form-control" autofocus="true" value="${user.editDate}"></form:input>
                                     </div>
                             </spring:bind>
-                            
+
                             <label>Płeć</label>
                             <div class="form-check form-check-inline">
                                 <input type="radio" class="form-check-input" id="materialInline1" value="male" name="gender" checked="">
@@ -125,23 +125,23 @@
                             <spring:bind path="weight">
                                 <div class="form-group ${status.error ? 'has-error' : ''}">
                                     <label>Waga</label>
-                                    <form:input type="number" path="weight" class="form-control" placeholder="Waga" value="${user.weight}"></form:input>
+                                    <form:input type="number" path="weight" class="form-control" placeholder="Waga [kg]" value="${user.weight}"></form:input>
                                     <form:errors path="weight"></form:errors>
-                                </div>
+                                    </div>
                             </spring:bind>
-                            
+
                             <spring:bind path="height">
                                 <div class="form-group ${status.error ? 'has-error' : ''}">
                                     <label>Wzrost</label>
-                                    <form:input type="number" path="height" class="form-control" placeholder="Wzrost" value="${user.height}"></form:input>
+                                    <form:input type="number" path="height" class="form-control" placeholder="Wzrost [cm]" value="${user.height}"></form:input>
                                     <form:errors path="height"></form:errors>
-                                </div>
+                                    </div>
                             </spring:bind>
-                            
+
                             <label>Ulubiona dyscyplina</label>
                             <select class="form-control" name="favourite">
                                 <option selected="" disabled="true">${user.favourite}</option>
-                                 <option value="None" disabled="true">---------------------------------------------------</option>
+                                <option value="None" disabled="true">---------------------------------------------------</option>
                                 <option value="Pływanie">Bieganie</option>
                                 <option value="Pływanie">Pływanie</option>
                                 <option value="Jazda na rowerze">Jazda na rowerze</option>
@@ -155,7 +155,7 @@
                 </div>
             </div>
         </div>
-                    
+
         <div class="navbar-fixed-bottom">
             <div class="panel-footer">
                 Copyright: Praca magisterska 2019 (Kamil Zemczak).

@@ -113,7 +113,7 @@
                     </div>
                 </div>
             </div>
-            <center><h4><a href="${contextPath}/login">POWRÓT DO LOGOWANIA.</a></h4></center>
+            <center><h4><a href="${contextPath}/login">POWRÓT DO LOGOWANIA</a></h4></center>
         </div>
 
         <div class="navbar-fixed-bottom">
