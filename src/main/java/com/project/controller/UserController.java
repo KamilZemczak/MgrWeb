@@ -13,6 +13,7 @@ import com.project.service.SecurityService;
 import com.project.service.UserService;
 import com.project.validator.UserEditValidator;
 import com.project.validator.UserValidator;
+import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -64,6 +65,7 @@ public class UserController {
         model.addAttribute("userEdit", new User());
         User user = userService.modifyDate();
         request.setAttribute("user", user);
+        request.setAttribute("sex", new ArrayList<String>(){{add("Mężczyzna"); add("Kobieta");}});
         return "editprofile";
     }
 
@@ -75,5 +77,7 @@ public class UserController {
         }
         userService.updateProfile(userService.getCurrentUser(), userForm);
         return "redirect:/";
+        
+        //test
     }
 }
