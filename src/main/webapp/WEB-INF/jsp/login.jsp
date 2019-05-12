@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width = device-width, initial-scale = 1">
 
-        <title>Login</title>
+        <title>Ready4RUN - logowanie</title>
         <link href="${contextPath}/static/css/bootstrap.css" rel="stylesheet">
         <link href="${contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
         <link href="${contextPath}/static/css/common.css" rel="stylesheet">
@@ -52,7 +52,7 @@
                     </div>
                 </div>
             </div>
-            <center><h4>Jeśli nie masz konta: <a href="${contextPath}/registration">ZAREJESTRUJ SIĘ</a></h4></center>
+            <center><h4>Jeśli nie masz konta: <a href="${contextPath}/registration">ZAREJESTRUJ SIĘ.</a></h4></center>
         </div>
 
         <div class="navbar-fixed-bottom">

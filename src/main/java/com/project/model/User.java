@@ -29,7 +29,7 @@ public class User implements Serializable {
     private String gender;
     private Integer weight;
     private Integer height;
-    private String favourite;
+    private String favourite = "Bieganie";
     private String editDate;
 
     public User() {

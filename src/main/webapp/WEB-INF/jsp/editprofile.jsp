@@ -16,7 +16,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Ready4RUN</title>
+        <title>Ready4RUN - edycja profilu</title>
 
         <link href="${contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
         <link href="${contextPath}/static/css/common.css" rel="stylesheet">

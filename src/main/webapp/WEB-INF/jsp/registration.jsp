@@ -15,7 +15,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Registration</title>
+        <title>Ready4RUN - rejestracja</title>
 
         <link href="${contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
         <link href="${contextPath}/static/css/common.css" rel="stylesheet">
@@ -94,12 +94,13 @@
 
                             <spring:bind path="dateOfBirth">
                                 <div class="form-group ${status.error ? 'has-error' : ''}">
-                                    <label for="example-date-input" class="col-2 col-form-label"><strong>DATA URODZENIA</strong></label>
+                                    <label for="example-date-input" class="col-2 col-form-label"><strong>Data urodzenia</strong></label>
                                     <form:input type="date" path="dateOfBirth" id="example-date-input" class="form-control" autofocus="true"></form:input>
                                     </div>
                             </spring:bind>
 
-                            <div class="form-check form-check-inline text-center">
+                            <label>Płeć</label>
+                            <div class="form-check form-check-inline">
                                 <input type="radio" class="form-check-input" id="materialInline1" value="male" name="gender" checked="">
                                 <label class="form-check-label" for="male">MĘŻCZYZNA</label>
 
@@ -112,7 +113,7 @@
                     </div>
                 </div>
             </div>
-            <center><h4><a href="${contextPath}/login">POWRÓT DO LOGOWANIA</a></h4></center>
+            <center><h4><a href="${contextPath}/login">POWRÓT DO LOGOWANIA.</a></h4></center>
         </div>
 
         <div class="navbar-fixed-bottom">
