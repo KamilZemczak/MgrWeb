@@ -20,6 +20,8 @@
 
         <link href="${contextPath}/static/css/bootstrap.min.css" rel="stylesheet">
         <link href="${contextPath}/static/css/common.css" rel="stylesheet">
+        
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 
         <style>
             .jumbotron{
@@ -59,46 +61,59 @@
 
         <div class="container">
             <div class="row">
+                <div class="col-md-4"></div>
                 <div class="col-md-4">
-                </div>
-                <div class="col-md-4">
-                    <div class="jumbotron">
-
-                        <h2><strong>EDYCJA PROFILU</strong>:</h2>
+                    <div class="jumbotron editProfileForm">
+                        <div class="text-center">
+                            <h2><strong>EDYCJA PROFILU</strong>:</h2>
+                        </div>
                         <form:form method="POST" modelAttribute="userEdit" class="form-signin">
-
                             <spring:bind path="username">
                                 <div class="form-group ${status.error ? 'has-error' : ''}">
-                                    <left><label>Nazwa użytkownika</label></left>
-                                        <form:input type="text" path="username" class="form-control" placeholder="Username"
-                                                    autofocus="true" value="${user.username}"></form:input>
-                                        <form:errors path="username"></form:errors>
-                                    </div>
+                                    <label>Nazwa użytkownika</label>
+                                    <div class="input-group">
+						                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                        <form:input path="username" type="text" class="form-control" maxlength="50" placeholder="Nazwa użytkownika" autofocus="true" value="${user.username}"></form:input>
+					                </div> 
+                                    <form:errors path="username"></form:errors>
+                                </div>
                             </spring:bind>
 
-                            <spring:bind path="name">
-                                <div class="form-group ${status.error ? 'has-error' : ''}">
-                                    <form:input type="text" path="name" class="form-control" placeholder="Name"
-                                                autofocus="true" value="${user.name}"></form:input>
-                                    <form:errors path="name"></form:errors>
-                                    </div>
-                            </spring:bind>
-
-                            <spring:bind path="surname">
-                                <div class="form-group ${status.error ? 'has-error' : ''}">
-                                    <form:input type="text" path="surname" class="form-control" placeholder="Surname"
-                                                autofocus="true" value="${user.surname}"></form:input>
-                                    <form:errors path="surname"></form:errors>
-                                    </div>
-                            </spring:bind>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <spring:bind path="name">
+                                        <div class="form-group ${status.error ? 'has-error' : ''}">
+                                            <label>Imię</label>
+                                            <div class="input-group">
+						                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                                <form:input path="name" type="text" class="form-control" maxlength="50" placeholder="Imię" value="${user.name}"></form:input>
+					                        </div>  
+                                            <form:errors path="name"></form:errors>
+                                            </div>
+                                    </spring:bind>
+                                </div>
+                                <div class="col-md-6">
+                                    <spring:bind path="surname">
+                                        <div class="form-group ${status.error ? 'has-error' : ''}">
+                                            <label>Nazwisko</label>
+                                            <div class="input-group">
+						                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                                <form:input path="surname" type="text" class="form-control" maxlength="50" placeholder="Nazwisko" value="${user.surname}"></form:input>
+                                            </div>
+                                        <form:errors path="surname"></form:errors>
+                                        </div>
+                                    </spring:bind>
+                                </div>    
+                            </div>
 
                             <spring:bind path="dateOfBirth">
                                 <div class="form-group ${status.error ? 'has-error' : ''}">
-                                    <label for="example-date-input" class="col-2 col-form-label"><strong>DATA URODZENIA</strong></label>
+                                    <label>Data urodzenia</label>
                                     <form:input type="date" path="dateOfBirth" id="example-date-input" class="form-control" autofocus="true" value="${user.editDate}"></form:input>
                                     </div>
                             </spring:bind>
-
+                            
+                            <label>Płeć</label>
                             <div class="form-check form-check-inline">
                                 <input type="radio" class="form-check-input" id="materialInline1" value="male" name="gender" checked="">
                                 <label class="form-check-label" for="male">MĘŻCZYZNA</label>
@@ -109,18 +124,18 @@
 
                             <spring:bind path="weight">
                                 <div class="form-group ${status.error ? 'has-error' : ''}">
-                                    <form:input type="number" path="weight" class="form-control" placeholder="Waga"
-                                                autofocus="true" value="${user.weight}"></form:input>
+                                    <label>Waga</label>
+                                    <form:input type="number" path="weight" class="form-control" placeholder="Waga" value="${user.weight}"></form:input>
                                     <form:errors path="weight"></form:errors>
-                                    </div>
+                                </div>
                             </spring:bind>
-
+                            
                             <spring:bind path="height">
                                 <div class="form-group ${status.error ? 'has-error' : ''}">
-                                    <form:input type="number" path="height" class="form-control" placeholder="Wzrost"
-                                                autofocus="true" value="${user.height}"></form:input>
+                                    <label>Wzrost</label>
+                                    <form:input type="number" path="height" class="form-control" placeholder="Wzrost" value="${user.height}"></form:input>
                                     <form:errors path="height"></form:errors>
-                                    </div>
+                                </div>
                             </spring:bind>
                             
                             <label>Ulubiona dyscyplina</label>

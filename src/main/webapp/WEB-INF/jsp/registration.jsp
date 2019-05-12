@@ -35,47 +35,62 @@
             <div class="row">
                 <div class="col-md-4"></div>
                 <div class="col-md-4">
-                    <div class="jumbotron text-center">
-                        <form:form method="POST" modelAttribute="userForm" class="form-signin">
+                    <div class="jumbotron editProfileForm">
+                        <form:form method="POST" modelAttribute="userForm" class="form-signin"  width="390">
 
                             <spring:bind path="username">
                                 <div class="form-group ${status.error ? 'has-error' : ''}">
-                                    <form:input type="text" path="username" class="form-control" placeholder="Nazwa użytkownika"
-                                                autofocus="true"></form:input>
+                                    <div class="input-group loginInput">
+						                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                        <form:input path="username" type="text" class="form-control" maxlength="50" placeholder="Nazwa użytkownika" autofocus="true"></form:input>
+					                </div>  
                                     <form:errors path="username"></form:errors>
                                     </div>
                             </spring:bind>
 
                             <spring:bind path="password">
                                 <div class="form-group ${status.error ? 'has-error' : ''}">
-                                    <form:input type="password" path="password" class="form-control" placeholder="Hasło"></form:input>                                       
+                                    <div class="input-group loginInput">
+						                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                        <form:input path="password" type="password" class="form-control" maxlength="50" placeholder="Hasło"></form:input>
+					                </div>                                
                                     <form:errors path="password"></form:errors>
                                     </div>
                             </spring:bind>
 
                             <spring:bind path="passwordConfirm">
                                 <div class="form-group ${status.error ? 'has-error' : ''}">
-                                    <form:input type="password" path="passwordConfirm" class="form-control"
-                                                placeholder="Powtórz hasło"></form:input>
+                                    <div class="input-group loginInput">
+						                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                        <form:input path="passwordConfirm" type="password" class="form-control" maxlength="50" placeholder="Powtórz hasło"></form:input>
+					                </div>
                                     <form:errors path="passwordConfirm"></form:errors>
                                     </div>
                             </spring:bind>
-
-                            <spring:bind path="name">
-                                <div class="form-group ${status.error ? 'has-error' : ''}">
-                                    <form:input type="text" path="name" class="form-control" placeholder="Imię"
-                                                autofocus="true"></form:input>
-                                    <form:errors path="name"></form:errors>
-                                    </div>
-                            </spring:bind>
-
-                            <spring:bind path="surname">
-                                <div class="form-group ${status.error ? 'has-error' : ''}">
-                                    <form:input type="text" path="surname" class="form-control" placeholder="Nazwisko"
-                                                autofocus="true"></form:input>
-                                    <form:errors path="surname"></form:errors>
-                                    </div>
-                            </spring:bind>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <spring:bind path="name">
+                                        <div class="form-group ${status.error ? 'has-error' : ''}">
+                                            <div class="input-group loginInput">
+						                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                                <form:input path="name" type="text" class="form-control" maxlength="50" placeholder="Imię"></form:input>
+					                        </div>  
+                                            <form:errors path="name"></form:errors>
+                                            </div>
+                                    </spring:bind>
+                                </div>
+                                <div class="col-md-6">
+                                    <spring:bind path="surname">
+                                    <div class="form-group ${status.error ? 'has-error' : ''}">
+                                        <div class="input-group loginInput">
+						                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                                <form:input path="surname" type="text" class="form-control" maxlength="50" placeholder="Nazwisko"></form:input>
+					                    </div>
+                                        <form:errors path="surname"></form:errors>
+                                        </div>
+                                    </spring:bind>
+                                </div>    
+                            </div>
 
                             <spring:bind path="dateOfBirth">
                                 <div class="form-group ${status.error ? 'has-error' : ''}">
@@ -84,7 +99,7 @@
                                     </div>
                             </spring:bind>
 
-                            <div class="form-check form-check-inline">
+                            <div class="form-check form-check-inline text-center">
                                 <input type="radio" class="form-check-input" id="materialInline1" value="male" name="gender" checked="">
                                 <label class="form-check-label" for="male">MĘŻCZYZNA</label>
 
@@ -97,7 +112,7 @@
                     </div>
                 </div>
             </div>
-            <center><h4><a href="${contextPath}/login">POWRÓT DO LOGOWANIA.</a></h4></center>
+            <center><h4><a href="${contextPath}/login">POWRÓT DO LOGOWANIA</a></h4></center>
         </div>
 
         <div class="navbar-fixed-bottom">
