@@ -75,4 +75,16 @@ public class UserServiceImpl implements UserService {
         user.setFavourite(userForm.getFavourite());
         update(user);
     }
+    
+     public void setDetails(User userToSet, Integer id, String name, String surname, String username, Date dateOfBirth, String gender, Integer weight, Integer height, String favourite) {
+        userToSet.setId(id);
+        userToSet.setName(name);
+        userToSet.setSurname(surname);
+        userToSet.setUsername(username);
+        userToSet.setDateOfBirth(dateOfBirth);
+        userToSet.setGender(gender);
+        userToSet.setWeight(weight);
+        userToSet.setHeight(height);
+        userToSet.setFavourite(favourite);
+    }
 }
